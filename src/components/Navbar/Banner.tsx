@@ -9,8 +9,8 @@ const Banner: React.FC = () => {
     initial={{opacity:0}}
     animate={{opacity:1}}
     transition={{duration: 0.5 , delay: 0.5}}
-    className='bg-blue-400 text-sm text-center font-semibold p-1 hidden lg:block relative'>
-        amc amc amc amc amc amc
+    className='bg-[#B0DB9C]  text-1xl text-center font-black p-1 hidden lg:block relative'>
+        Arquitectura de maquinas de computadoras
     </motion.div>
   );
 };

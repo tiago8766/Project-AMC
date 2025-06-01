@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import image from "../../images/7922058.jpg";
+import image from "../../images/compu.png";
 import { slideRight } from '../../animations/index';
 import { FaPlay } from 'react-icons/fa';
 
@@ -31,21 +31,16 @@ const Hero: React.FC = () => {
             variants={slideRight(0)}
             className="text-orange-600 uppercase font-semibold"
           >
-            AMC AMC AMC AMC AMC AMC AMC
+            Un espacio autodidacta
           </motion.p>
 
           <motion.h1
             variants={slideRight(0)}
             className="text-5xl font-semibold lg:text-6xl !leading-tight"
           >
-            AMC AMC AMC AMC AMC AMC AMC AMC<span className="text-primary">OALLSLA</span>
+           Descubre la Arquitectura de las computadoras
           </motion.h1>
 
-          <motion.p
-            variants={slideRight(0)}
-          >
-            OLA ANDRES TENGO SUEÑO
-          </motion.p>
         </motion.div>
 
         <div className="flex gap-8 justify-center md:justify-start !mt-8 items-center">
@@ -53,10 +48,10 @@ const Hero: React.FC = () => {
             variants={slideRight(0.5)}
             initial="hidden"
             animate="visible"
-            className="bg-blue-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-600 transition-colors"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out"
             onClick={() => console.log(" OLA")}
           >
-            OLA
+            Inicia
           </motion.button>
            <motion.button
             variants={slideRight(0.7)} 
