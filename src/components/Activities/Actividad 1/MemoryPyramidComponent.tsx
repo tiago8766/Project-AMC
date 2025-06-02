@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemoryPyramidData } from '../../interfaces/Actividades';
+import { MemoryPyramidData } from '../../../interfaces/Actividades';
 
 interface MemoryPyramidProps {
   data: MemoryPyramidData;

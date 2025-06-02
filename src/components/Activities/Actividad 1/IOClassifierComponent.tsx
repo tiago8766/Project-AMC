@@ -1,5 +1,5 @@
 import React from 'react';
-import { IOSimulatorData } from '../../interfaces/Actividades';
+import { IOSimulatorData } from '../../../interfaces/Actividades';
 
 interface IOClassifierProps {
   data: IOSimulatorData;
@@ -10,7 +10,7 @@ const IOClassifierComponent: React.FC<IOClassifierProps> = ({ data }) => {
     <div>
       <h4 className="text-xl font-semibold mb-3">Dispositivos de Entrada/Salida:</h4>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Categoría de Entrada */}
+   
         <div className="bg-red-50 p-4 rounded-lg border border-red-200">
           <h5 className="font-bold text-red-700 mb-2">Entrada</h5>
           <ul className="list-disc list-inside text-gray-700 text-sm">
@@ -19,7 +19,7 @@ const IOClassifierComponent: React.FC<IOClassifierProps> = ({ data }) => {
             ))}
           </ul>
         </div>
-        {/* Categoría de Salida */}
+ 
         <div className="bg-green-50 p-4 rounded-lg border border-green-200">
           <h5 className="font-bold text-green-700 mb-2">Salida</h5>
           <ul className="list-disc list-inside text-gray-700 text-sm">
@@ -28,7 +28,7 @@ const IOClassifierComponent: React.FC<IOClassifierProps> = ({ data }) => {
             ))}
           </ul>
         </div>
-        {/* Categoría de Entrada/Salida */}
+     
         <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
           <h5 className="font-bold text-blue-700 mb-2">Entrada/Salida</h5>
           <ul className="list-disc list-inside text-gray-700 text-sm">

@@ -1,43 +1,84 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Actividades, Activity } from '../../interfaces/Actividades'; // Asegúrate de importar Activity y Actividades
-import FlowDiagramComponent from './FlowDiagramComponent';
-import IOClassifierComponent from './IOClassifierComponent';
-import MemoryPyramidComponent from './MemoryPyramidComponent';
-import EvaluationComponent from './Evaluation'; // Asegúrate de que la ruta a Evaluation.tsx es correcta
+
+import { Actividades, Activity, ActivityDetailSection } from '../../interfaces/Actividades';
+import InteractiveComponentRenderer from './InteractiveComponent';
+
+
 
 const ActivityDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [activity, setActivity] = useState<Activity | null>(null);
-  const [activeSectionId, setActiveSectionId] = useState<string | undefined>(undefined); // Para la navegación por secciones
+  const [sections, setSections] = useState<ActivityDetailSection[] | null>(null); 
+  const [activeSectionId, setActiveSectionId] = useState<string | undefined>(undefined);
+  const [loadingSections, setLoadingSections] = useState<boolean>(true); 
+  const [loadError, setLoadError] = useState<string | null>(null); 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const foundActivity = Actividades.find(act => act.id === id);
-    if (foundActivity) {
-      setActivity(foundActivity);
-      // Establece la primera sección como activa por defecto si hay secciones
-      if (foundActivity.sections && foundActivity.sections.length > 0) {
-        setActiveSectionId(foundActivity.sections[0].id);
-      } else {
-        setActiveSectionId(undefined); // No hay secciones interactivas
-      }
-    } else {
-      console.warn(`Actividad con ID ${id} no encontrada.`);
-      navigate('/');
-    }
-  }, [id, navigate]);
+    const loadActivityData = async () => {
+      setLoadingSections(true);
+      setLoadError(null);
 
-  if (!activity) {
+      const foundActivity = Actividades.find(act => act.id === id);
+
+      if (!foundActivity) {
+        navigate('/');
+        return;
+      }
+
+      setActivity(foundActivity);
+
+      try {
+        let loadedSections: ActivityDetailSection[] = [];
+ 
+        switch (id) {
+          case 'activity-1': { 
+            const { estructuraComputadoraSections } = await import('../Activities/Actividad 1/EstructuraComputadora');
+            loadedSections = estructuraComputadoraSections;
+            break;
+          } 
+          case 'activity-2': { 
+            const { arquitecturaMicroprocesadorSections } = await import('../Activities/Actividad 2/Microprocesador');
+            loadedSections = arquitecturaMicroprocesadorSections;
+            break;
+          } 
+        
+  
+          default:
+            console.warn(`No se encontraron secciones detalladas para la actividad con ID: ${id}`);
+            loadedSections = []; 
+        }
+
+        setSections(loadedSections);
+        if (loadedSections.length > 0) {
+          setActiveSectionId(loadedSections[0].id);
+        } else {
+          setActiveSectionId(undefined);
+        }
+      } catch (error) {
+        console.error("Error al cargar las secciones de la actividad:", error);
+        setLoadError("No se pudieron cargar los detalles de las secciones.");
+      } finally {
+        setLoadingSections(false);
+      }
+    };
+
+    loadActivityData();
+  }, [id, navigate]); 
+
+  
+  if (!activity || loadingSections) {
     return (
       <div className="flex items-center justify-center min-h-screen text-gray-600 text-xl font-semibold">
-        Cargando detalles de la actividad...
+        {loadError ? `Error al cargar: ${loadError}` : 'Cargando detalles de la actividad...'}
       </div>
     );
   }
 
-  // Encuentra la sección activa para mostrar su contenido
-  const currentSection = activity.sections?.find(sec => sec.id === activeSectionId);
+
+  const currentSection = sections?.find(sec => sec.id === activeSectionId);
 
   return (
     <div className="container mx-auto p-4">
@@ -66,12 +107,12 @@ const ActivityDetail: React.FC = () => {
           </div>
         </div>
 
-        {activity.sections && activity.sections.length > 0 ? (
-          
+      
+        {sections && sections.length > 0 ? (
           <div className="sections-container">
-           
+
             <div className="flex flex-wrap justify-center gap-4 mb-8 border-b pb-4">
-              {activity.sections.map((section) => (
+              {sections.map((section) => (
                 <button
                   key={section.id}
                   onClick={() => setActiveSectionId(section.id)}
@@ -83,8 +124,9 @@ const ActivityDetail: React.FC = () => {
               ))}
             </div>
 
-            {/* Contenido de la sección activa */}
-            {currentSection && (
+
+            {
+            currentSection && (
               <div className="section-content-area">
                 {currentSection.image && (
                   <img src={currentSection.image} alt={currentSection.title} className="w-full h-64 object-cover rounded-lg mb-4 shadow-sm" />
@@ -93,25 +135,10 @@ const ActivityDetail: React.FC = () => {
                   {currentSection.content}
                 </p>
 
+
                 {currentSection.interactiveComponent && (
                   <div className="interactive-component-wrapper bg-blue-50 p-6 rounded-lg border border-blue-200 mt-6">
-                   
-
-                    {currentSection.interactiveComponent === 'flowDiagram' && currentSection.data && (
-                      <FlowDiagramComponent data={currentSection.data} />
-                    )}
-
-                    {currentSection.interactiveComponent === 'memoryPyramid' && currentSection.data && (
-                      <MemoryPyramidComponent data={currentSection.data} />
-                    )}
-
-                    {currentSection.interactiveComponent === 'ioClassifier' && currentSection.data && (
-                      <IOClassifierComponent data={currentSection.data} />
-                    )}
-
-                    {currentSection.interactiveComponent === 'evaluation' && (
-                      <EvaluationComponent />
-                    )}
+                    <InteractiveComponentRenderer section={currentSection} />
                   </div>
                 )}
               </div>
@@ -119,7 +146,11 @@ const ActivityDetail: React.FC = () => {
           </div>
         ) : (
           <div className="text-gray-800 text-lg leading-relaxed mb-8">
-            <p className="mb-4">{activity.longDescription}</p>
+            <p className="mb-4">{activity.longDescription || activity.description}</p>
+            {!loadingSections && !sections?.length && !loadError && (
+                 <p className="text-gray-500 italic">No hay secciones detalladas disponibles para esta actividad.</p>
+            )}
+             {loadError && <p className="text-red-500 font-bold">Error: {loadError}</p>}
           </div>
         )}
       </div>

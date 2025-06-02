@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FlowDiagramData } from '../../interfaces/Actividades';
+import { FlowDiagramData } from '../../../interfaces/Actividades';
 
 interface FlowDiagramProps {
   data: FlowDiagramData;
