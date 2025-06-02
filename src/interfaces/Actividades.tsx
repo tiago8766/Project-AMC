@@ -155,7 +155,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-3",
-    name: "Actividad 3: Desarrollo Backend con Node.js",
+    name: "Actividad 3",
     icon: <DiNodejs />,
     color: "bg-[#DDF6D2]",
     description: "Aprende los fundamentos del desarrollo backend con Node.js y Express.",
@@ -164,7 +164,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-4",
-    name: "Actividad 4: Ciencia de Datos con Python",
+    name: "Actividad 4",
     icon: <DiPython />,
     color: "bg-[#DDF6D2]",
     description: "Introducción a la ciencia de datos, análisis y visualización con Python.",
@@ -173,7 +173,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-5",
-    name: "Actividad 5: Bases de Datos SQL y NoSQL",
+    name: "Actividad 5",
     icon: <FaDatabase />,
     color: "bg-[#DDF6D2]",
     description: "Comprende los distintos tipos de bases de datos y cuándo usar cada una.",
@@ -182,7 +182,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-6",
-    name: "Actividad 6: Sistemas Operativos y Shell",
+    name: "Actividad 6",
     icon: <FaTerminal />,
     color: "bg-[#DDF6D2]",
     description: "Explora los sistemas operativos y aprende a manejar la línea de comandos.",
@@ -191,7 +191,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-7",
-    name: "Actividad 7: Programación Orientada a Objetos",
+    name: "Actividad 7",
     icon: <FaDesktop />,
     color: "bg-[#C7DB9C]",
     description: "Conceptos fundamentales de la Programación Orientada a Objetos (POO).",
@@ -200,7 +200,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-8",
-    name: "Actividad 8: Fundamentos de Redes",
+    name: "Actividad 8",
     icon: <FaNetworkWired />,
     color: "bg-[#C7DB9C]",
     description: "Introducción a los conceptos básicos de redes de computadoras.",
@@ -209,7 +209,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-9",
-    name: "Actividad 9: Desarrollo de Aplicaciones Móviles",
+    name: "Actividad 9",
     icon: <FaMobileAlt />,
     color: "bg-[#C7DB9C]",
     description: "Crea tus primeras aplicaciones para dispositivos móviles.",
@@ -218,7 +218,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-10",
-    name: "Actividad 10: Computación en la Nube",
+    name: "Actividad 10",
     icon: <FaCloud />,
     color: "bg-[#C7DB9C]",
     description: "Introducción a los servicios y modelos de computación en la nube.",
@@ -227,7 +227,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-11",
-    name: "Actividad 11: Arquitectura de Computadoras Avanzada",
+    name: "Actividad 11",
     icon: <FaMicrochip />,
     color: "bg-[#C7DB9C]",
     description: "Conceptos avanzados sobre el diseño y funcionamiento de computadoras.",
@@ -236,7 +236,7 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-12",
-    name: "Actividad 12: Robótica y Automatización",
+    name: "Actividad 12",
     icon: <SiIrobot />,
     color: "bg-[#C7DB9C]",
     description: "Introducción a la robótica, sus componentes y principios de automatización.",
