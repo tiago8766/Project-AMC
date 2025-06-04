@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
 import Alert from "@mui/material/Alert";
 
-import Draggable from "./Draggable";
-import DroppableText from "./DroppableText";
+import Draggable from "../DnDComponents/Draggable";
+import DroppableText from "../DnDComponents/DroppableText";
 
 interface DnDProps {
   items: string[];
@@ -67,7 +67,7 @@ const DnDComponentText: React.FC<DnDProps> = ({
 
       <DndContext onDragEnd={handleDragEnd}>
         {/* Draggables */}
-        <div className="flex gap-4 flex-wrap mb-8 p-1">
+        <div className="flex justify-center gap-3 flex-wrap p-1">
           {items.map((item) =>
             Object.values(droppedItems).includes(item) ? null : (
               <Draggable key={item} id={item}>
@@ -78,7 +78,7 @@ const DnDComponentText: React.FC<DnDProps> = ({
         </div>
 
         {/* Droppables */}
-        <div className="flex flex-col gap-4 p-1">
+        <div className="flex justify-center flex-col gap-3 p-1">
           {zones.map((zoneId) => (
             <DroppableText
               key={zoneId}

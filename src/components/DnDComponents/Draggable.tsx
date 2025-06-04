@@ -18,7 +18,7 @@ const Draggable: React.FC<DraggableProps> = ({ id, children }) => {
   return (
     <div className="flex grow flex-col items-center min-w-[100px] max-w-[150px]">
       <button
-        className="bg-green-200 border-2 border-b-emerald-950 rounded-b-lg p-1.5 w-full h-full"
+        className="bg-[#DDF6D2] border-2 border-b-emerald-950 rounded-b-lg p-1.5 w-full h-full"
         ref={setNodeRef}
         style={style}
         {...listeners}
