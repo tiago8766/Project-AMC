@@ -1,29 +1,29 @@
 import React from "react";
-import { NavbarMenu } from "../../services/tareaService";
+import { NavbarMenu } from "../../services/menuItem.ts";
 import { MdComputer, MdMenu } from "react-icons/md";
-import { motion } from "framer-motion";
+import Menu from "./Menu.tsx"
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = React.useState(false);
-
+    const handleCloseMenu = () => {
+        setIsOpen(false);
+    };
     return (
         <>
             <nav>
-                <div className="relative w-full h-16 flex items-center px-4 justify-between"> {/* Added justify-between here */}
+                <div className="relative w-full h-16 flex items-center px-4 justify-between"> 
 
-                    {/* Logo a la izquierda - Ajustado para centrado */
-                    // Este div ahora estará a la izquierda, pero el contenido interno puede ser flex para centrar el logo y texto
-                    }
-                    <div className="flex items-center gap-2"> {/* Added flex and gap for icon and text */}
+                   
+                    <div className="flex items-center gap-2">
                         <MdComputer className="text-3xl text-cyan-950" />
-                        <span className="font-bold text-lg">AMC</span> {/* Added text-lg for slight size increase for visibility */}
+                        <span className="font-bold text-lg">AMC</span>
                     </div>
 
 
                     {/* Menú centrado */}
                     <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
                         <ul className="flex items-center gap-6">
-                            {NavbarMenu().map((i) => (
+                            {NavbarMenu.map((i) => (
                                 <li key={i.id}>
                                     <a
                                         href={i.link}
@@ -44,6 +44,7 @@ const Navbar: React.FC = () => {
 
                 </div>
             </nav>
+            <Menu isOpen={isOpen} onClose={handleCloseMenu} />
         </>
     );
 };

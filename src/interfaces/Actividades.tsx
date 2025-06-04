@@ -1,0 +1,246 @@
+
+import React from 'react';
+
+import { FaDesktop, FaMicrochip, FaTerminal, FaNetworkWired, FaCloud, FaMobileAlt, FaDatabase } from 'react-icons/fa';
+import { DiNodejs, DiPython } from 'react-icons/di';
+import { SiIrobot } from 'react-icons/si';
+
+export interface FlowDiagramData {
+  flowSteps: Array<{
+    id: string;
+    name: string;
+    desc: string;
+  }>;
+  cpuComponents: Array<{
+    name: string;
+    desc: string;
+  }>;
+}
+
+export interface MemoryPyramidData {
+  hierarchy: Array<{
+    level: string;
+    desc: string;
+  }>;
+  characteristics: Array<{
+    category: string;
+    items: string[];
+  }>;
+}
+
+export interface IOSimulatorData {
+  devices: Array<{
+    name: string;
+    type: 'manual-entrada' | 'automatico-entrada' | 'visual-salida' | 'fisico-salida' | 'entrada-salida-almacenamiento' | 'entrada-salida-comunicacion';
+  }>;
+  communication: Array<{
+    name: string;
+    desc: string;
+  }>;
+}
+
+
+export interface EvaluationQuestion {
+  id: string;
+  question: string;
+  options: {
+    id: string;
+    text: string;
+  }[];
+  correctAnswerId: string;
+  explanation?: string; 
+}
+
+
+export interface EvaluationData {
+  message?: string; 
+  questions: EvaluationQuestion[];
+}
+export interface ArchitectureData {
+  architectures: Array<{
+    id: string;
+    name: string;
+    image: string;
+    components: Array<{
+      id: string;
+      name: string;
+      description: string;
+      position?: { x: number; y: number; width: number; height: number };
+    }>;
+  }>;
+}
+
+export interface TerminalsData {
+  mainImage: string;
+  terminals: Array<{
+    id: string;
+    name: string;
+    description: string;
+    hotspotArea?: { x: number; y: number; width: number; height: number };
+  }>;
+}
+
+export interface DiagramBuilderData {
+  baseDiagramImage: string;
+  components: {
+    id: string;
+    name: string;
+    type: string;
+    description: string;
+  }[];
+  targetSlots: {
+    id: string;
+    label: string;
+    correctComponentType: string;
+    position: {
+      left: number;
+      top: number;
+      width: number;
+      height: number;
+    };
+  }[];
+}
+
+
+export type InteractiveComponentDataType =
+  | FlowDiagramData
+  | MemoryPyramidData
+  | IOSimulatorData
+  | EvaluationData 
+  | ArchitectureData
+  | TerminalsData
+  | DiagramBuilderData;
+
+
+export interface ActivityDetailSection {
+  id: string;
+  title: string;
+  content: string;
+  image?: string;
+  interactiveComponent?: 'flowDiagram' | 'memoryPyramid' | 'ioClassifier' | 'evaluation' | 'architectureViewer' | 'terminalsViewer' | 'blockDiagramBuilder' | 'blockDiagramQuiz';
+  data?: InteractiveComponentDataType;
+}
+
+
+export interface Activity {
+  id: string;
+  name: string;
+  icon: React.ReactElement;
+  color: string;
+  description: string;
+  
+  longDescription?: string;
+  image?: string;
+
+}
+export const Actividades: Activity[] = [
+  {
+    id: "activity-1",
+    name: "Estructura de la Computadora",
+    icon: <FaDesktop />,
+    color: "bg-[#DDF6D2]",
+    description: "Comprende cómo los componentes de hardware y software interactúan para que una computadora funcione de manera eficiente.",
+    image: "https://via.placeholder.com/600x300/e0f2f7/000000?text=Estructura+Computadora",
+    longDescription: "Explora la estructura interna de una computadora, desde el procesamiento hasta la memoria y los sistemas de entrada/salida.",
+   
+  },
+  {
+    id: "activity-2",
+    name: "Arquitectura del Microprocesador",
+    icon: <FaMicrochip />,
+    color: "bg-[#C7DB9C]",
+    description: "Explora las arquitecturas de microprocesadores, sus terminales y la construcción de diagramas de bloques.",
+    longDescription: "Esta actividad te sumerge en el corazón de la computadora: el microprocesador. Comprenderás las diferencias entre las arquitecturas Von Neumann y Harvard, identificarás las funciones de los terminales del microprocesador y aprenderás a interpretar y construir diagramas de bloques para representar sistemas complejos. A través de ejercicios interactivos y un quiz, reforzarás tu conocimiento sobre cómo estos elementos fundamentales interactúan para dar vida a los sistemas informáticos.",
+    image: "https://via.placeholder.com/600x300/ffe4e6/e11d48?text=Microprocesador+Arch",
+  },
+  {
+    id: "activity-3",
+    name: "Actividad 3",
+    icon: <DiNodejs />,
+    color: "bg-[#DDF6D2]",
+    description: "A",
+    longDescription: "E",
+    image: "https://via.placeholder.com/600x300/bfdbfe/3b82f6?text=Backend+Nodejs",
+  },
+  {
+    id: "activity-4",
+    name: "Actividad 4",
+    icon: <DiPython />,
+    color: "bg-[#DDF6D2]",
+    description: "I",
+    longDescription: "S",
+    image: "https://via.placeholder.com/600x300/dbeafe/60a5fa?text=Data+Science+Python",
+  },
+  {
+    id: "activity-5",
+    name: "Actividad 5",
+    icon: <FaDatabase />,
+    color: "bg-[#DDF6D2]",
+    description: "C",
+    longDescription: "E",
+    image: "https://via.placeholder.com/600x300/ccfbf1/0d9488?text=SQL+NoSQL+Databases",
+  },
+  {
+    id: "activity-6",
+    name: "Actividad 6",
+    icon: <FaTerminal />,
+    color: "bg-[#DDF6D2]",
+    description: "E",
+    longDescription: "E.",
+    image: "https://via.placeholder.com/600x300/ffedd5/f97316?text=OS+Shell",
+  },
+  {
+    id: "activity-7",
+    name: "Actividad 7",
+    icon: <FaDesktop />,
+    color: "bg-[#C7DB9C]",
+    description: "C",
+    longDescription: "Pr",
+    image: "https://via.placeholder.com/600x300/d1fae5/059669?text=POO+Concepts",
+  },
+  {
+    id: "activity-8",
+    name: "Actividad 8",
+    icon: <FaNetworkWired />,
+    color: "bg-[#C7DB9C]",
+    description: "I",
+    longDescription: "E.",
+    image: "https://via.placeholder.com/600x300/c7d2fe/6366f1?text=Networking",
+  },
+  {
+    id: "activity-9",
+    name: "Actividad 9",
+    icon: <FaMobileAlt />,
+    color: "bg-[#C7DB9C]",
+    description: "C",
+    longDescription: "A.",
+    image: "https://via.placeholder.com/600x300/fef3c7/f59e0b?text=Mobile+Apps",
+  },
+  {
+    id: "activity-10",
+    name: "Actividad 10",
+    icon: <FaCloud />,
+    color: "bg-[#C7DB9C]",
+    description: "I",
+    longDescription: "D",
+    image: "https://via.placeholder.com/600x300/e0e7ff/4338ca?text=Cloud+Computing",
+  },
+  {
+    id: "activity-11",
+    name: "Actividad 11",
+    icon: <FaMicrochip />,
+    color: "bg-[#C7DB9C]",
+    description: "C",
+    longDescription: "P",
+    image: "https://via.placeholder.com/600x300/ffe4e6/e11d48?text=Computer+Arch",
+  },
+  {
+    id: "activity-12",
+    name: "Actividad 12",
+    icon: <SiIrobot />,
+    color: "bg-[#C7DB9C]",
+    description: "fd",
+    longDescription: "lorem",
+    image: "https://via.placeholder.com/600x300/ecfdf5/065f46?text=Robotics+Automation",
+  },
+];
