@@ -1,4 +1,4 @@
-// src/components/CardSection.tsx
+
 import React from 'react';
 import Card from './Card';
 import {CardProps} from '../../interfaces/Cards'
@@ -42,7 +42,7 @@ const CardSection: React.FC = () => {
         <h2 className="text-center text-base font-semibold uppercase tracking-wide text-orange-600 mb-2">
           Nuestros Testimonios
         </h2>
-        <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-gray-900 mb-12"> {/* Más grande y negrita */}
+        <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-gray-900 mb-12"> 
           Comentarios
         </h1>
     <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 max-w-6xl mx-auto">

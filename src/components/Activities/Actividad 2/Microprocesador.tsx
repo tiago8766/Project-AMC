@@ -1,5 +1,6 @@
-// src/data/actividades/arquitecturaMicroprocesadorSections.ts
+
 import { ActivityDetailSection, ArchitectureData, TerminalsData, DiagramBuilderData, EvaluationData } from '../../../interfaces/Actividades';
+
 
 export const arquitecturaMicroprocesadorSections: ActivityDetailSection[] = [
   {
@@ -79,41 +80,7 @@ export const arquitecturaMicroprocesadorSections: ActivityDetailSection[] = [
     content: "Seccion para evaluar lo aprendido",
     interactiveComponent: 'blockDiagramQuiz',
     data: {
-      questions: [
-        {
-          id: 'qa2-q1',
-          question: '¿Qué característica principal diferencia la Arquitectura Harvard de la Von Neumann?',
-          options: [
-            { id: 'qa2-optA', text: 'Utiliza un único bus para datos e instrucciones.' },
-            { id: 'qa2-optB', text: 'Tiene memorias y buses separados para datos e instrucciones.' },
-            { id: 'qa2-optC', text: 'Solo puede ejecutar una instrucción a la vez.' },
-          ],
-          correctAnswerId: 'qa2-optB',
-          explanation: 'La Arquitectura Harvard usa memorias y buses distintos, permitiendo acceso simultáneo a datos e instrucciones.'
-        },
-        {
-          id: 'qa2-q2',
-          question: '¿Qué tipo de terminal en un microprocesador es responsable de sincronizar todas las operaciones internas?',
-          options: [
-            { id: 'qa2-optA', text: 'Terminales de Datos' },
-            { id: 'qa2-optB', text: 'Terminales de Control' },
-            { id: 'qa2-optC', text: 'Terminal de Reloj (CLK)' },
-          ],
-          correctAnswerId: 'qa2-optC',
-          explanation: 'La señal de reloj (CLK) es fundamental para la sincronización de todas las operaciones dentro del microprocesador.'
-        },
-        {
-          id: 'qa2-q3',
-          question: 'En un diagrama de bloques de un sistema microprogramable, ¿qué componente permite la comunicación con periféricos como teclados o pantallas?',
-          options: [
-            { id: 'qa2-optA', text: 'Memoria ROM' },
-            { id: 'qa2-optB', text: 'Unidades E/S' },
-            { id: 'qa2-optC', text: 'CPU' },
-          ],
-          correctAnswerId: 'qa2-optB',
-          explanation: 'Las Unidades de Entrada/Salida (E/S) son las interfaces con los dispositivos externos.'
-        },
-      ],
-    } as EvaluationData, 
+       
+        } as EvaluationData,
   }
 ];

@@ -92,66 +92,7 @@ export const estructuraComputadoraSections: ActivityDetailSection[] = [
     content: "Seccion para evaluar lo aprendido",
     interactiveComponent: 'evaluation',
     data: {
-      questions: [
-        {
-          id: 'q1',
-          question: '¿Qué componente de la CPU se encarga de realizar operaciones aritméticas y lógicas?',
-          options: [
-            { id: 'opt1', text: 'Unidad de Control' },
-            { id: 'opt2', text: 'Unidad Aritmético-Lógica (ALU)' },
-            { id: 'opt3', text: 'Registros' },
-            { id: 'opt4', text: 'Memoria Caché' },
-          ],
-          correctAnswerId: 'opt2',
-          explanation: 'La ALU es la responsable de todas las operaciones matemáticas y lógicas.'
-        },
-        {
-          id: 'q2',
-          question: '¿Cuál es la característica principal de la memoria RAM?',
-          options: [
-            { id: 'opt1', text: 'No pierde datos al apagar el equipo' },
-            { id: 'opt2', text: 'Es más lenta que el disco duro' },
-            { id: 'opt3', text: 'Es volátil, pierde datos sin energía' },
-            { id: 'opt4', text: 'Almacena el firmware de la BIOS' },
-          ],
-          correctAnswerId: 'opt3',
-          explanation: 'La RAM es volátil, lo que significa que su contenido se borra al apagar el equipo.'
-        },
-        {
-          id: 'q3',
-          question: 'Según la "Jerarquía de Memoria", ¿qué tipo de memoria es la más rápida pero también la más pequeña y costosa?',
-          options: [
-            { id: 'optA', text: 'Almacenamiento Secundario (HDD/SSD)' },
-            { id: 'optB', text: 'Memoria Principal (RAM)' },
-            { id: 'optC', text: 'Registros' },
-            { id: 'optD', text: 'Memoria Cache' },
-          ],
-          correctAnswerId: 'optC',
-          explanation: 'Los registros están directamente en la CPU y son los más rápidos, aunque de menor capacidad.'
-        },
-        {
-          id: 'q4',
-          question: 'Un "Teclado" se clasifica principalmente como un dispositivo de:',
-          options: [
-            { id: 'optA', text: 'Salida' },
-            { id: 'optB', text: 'Entrada' },
-            { id: 'optC', text: 'Ambos (Entrada y Salida)' },
-          ],
-          correctAnswerId: 'optB',
-          explanation: 'Un teclado es un dispositivo de entrada manual.'
-        },
-        {
-          id: 'q5',
-          question: '¿Qué tipo de dispositivo permite tanto la entrada como la salida de información, como una "Memoria USB"?',
-          options: [
-            { id: 'optA', text: 'Solo Entrada' },
-            { id: 'optB', text: 'Solo Salida' },
-            { id: 'optC', text: 'Ambos (Entrada y Salida)' },
-          ],
-          correctAnswerId: 'optC',
-          explanation: 'Una memoria USB es un dispositivo de almacenamiento que puede leer y escribir datos, por lo que es de entrada y salida.'
-        },
-      ],
+   
     } as EvaluationData,
   },
 ];

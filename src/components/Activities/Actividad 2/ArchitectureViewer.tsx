@@ -1,4 +1,4 @@
-// src/components/ArchitectureViewer/ArchitectureViewer.tsx
+
 import React, { useState } from 'react';
 import { ArchitectureData } from '../../../interfaces/Actividades';
 

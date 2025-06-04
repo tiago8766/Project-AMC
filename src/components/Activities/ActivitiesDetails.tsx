@@ -44,6 +44,12 @@ const ActivityDetail: React.FC = () => {
             loadedSections = arquitecturaMicroprocesadorSections;
             break;
           } 
+           case 'activity-3': { 
+            const { ConceptosYProcesadores } = await import('../Activities/Actividad 3/conceptosYProcesadores');
+            loadedSections = ConceptosYProcesadores;
+            break;
+          } 
+        
         
   
           default:
