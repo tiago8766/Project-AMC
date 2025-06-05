@@ -1,4 +1,4 @@
-// src/components/InteractiveComponents/Actividad 5/AssemblyConceptsViewer.tsx
+
 import React from 'react';
 import { AssemblyConceptsViewerData } from '../../../interfaces/Actividades';
 
