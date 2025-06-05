@@ -45,11 +45,20 @@ const ActivityDetail: React.FC = () => {
             break;
           } 
            case 'activity-3': { 
-            const { ConceptosYProcesadores } = await import('../Activities/Actividad 3/conceptosYProcesadores');
+            const { ConceptosYProcesadores } = await import('../Activities/Actividad 3/ConceptosYProcesadores');
             loadedSections = ConceptosYProcesadores;
             break;
           } 
-        
+           case 'activity-4': { 
+            const {  ProgramacionMicroprocesador} = await import('../Activities/Actividad 4/ProgramacionMicro');
+            loadedSections = ProgramacionMicroprocesador;
+            break;
+          }
+           case 'activity-5': { 
+            const {  EnsambladorIx86} = await import('../Activities/Actividad 5/Ensamblador');
+            loadedSections = EnsambladorIx86;
+            break;
+          }
         
   
           default:

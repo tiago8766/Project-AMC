@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { FaDesktop, FaMicrochip, FaTerminal, FaNetworkWired, FaCloud, FaMobileAlt, FaDatabase } from 'react-icons/fa';
-import { DiPython } from 'react-icons/di';
 import { SiIrobot } from 'react-icons/si';
 
 export interface FlowDiagramData {
@@ -123,7 +122,36 @@ export interface FlashcardExplorerProps {
   type: 'flashcardExplorer'; 
   cards: FlashcardData[];
 }
+export interface InfografiaViewerData {
+  type: 'infografiaViewer';
+  sections: {
+    title: string;
+    description: string;
+    image?: string;
+  }[];
+}
 
+export interface AssemblyCodeViewerData {
+  type: 'assemblyCodeViewer';
+  exercises: {
+    id: string;
+    title: string;
+    description: string;
+    code: string;
+    expectedOutput: string;
+  }[];
+}
+export interface AssemblyConceptsViewerData {
+  type: 'assemblyConceptsViewer';
+  concepts: {
+    term: string;
+    definition: string;
+    examples?: {
+      type: string;
+      description: string;
+    }[];
+  }[];
+}
 
 export type InteractiveComponentDataType =
   | FlowDiagramData
@@ -135,12 +163,15 @@ export type InteractiveComponentDataType =
   | DiagramBuilderData
   | ProcessorTimelineProps 
   | FlashcardExplorerProps
+  | InfografiaViewerData
+  | AssemblyCodeViewerData
+  | AssemblyConceptsViewerData;
 export interface ActivityDetailSection {
   id: string;
   title: string;
   content: string;
   image?: string;
-  interactiveComponent?: 'flowDiagram' | 'memoryPyramid' | 'ioClassifier' | 'evaluation' | 'architectureViewer' | 'terminalsViewer' | 'blockDiagramBuilder' | 'blockDiagramQuiz' | 'processorTimeline' | 'flashcardExplorer' | 'evaluationAct3';
+  interactiveComponent?: 'flowDiagram' | 'memoryPyramid' | 'ioClassifier' | 'evaluation' | 'architectureViewer' | 'terminalsViewer' | 'blockDiagramBuilder' | 'blockDiagramQuiz' | 'processorTimeline' | 'flashcardExplorer' | 'evaluationAct3'| 'infografiaViewer' | 'assemblyCodeViewer'| 'evaluationAct4' |'assemblyConceptsViewer' | 'evaluationAct5';
   data?: InteractiveComponentDataType; 
 }
 
@@ -184,16 +215,16 @@ export const Actividades: Activity[] = [
   },
   {
     id: "activity-4",
-    name: "Ciencia de Datos con Python",
-    icon: <DiPython />,
+    name: "Programación del Microprocesador",
+    icon: <FaMicrochip />,
     color: "bg-[#DDF6D2]",
-    description: "Aprende los fundamentos de la ciencia de datos y cómo usar Python para análisis.",
-    longDescription: "Explora las herramientas y técnicas esenciales en la ciencia de datos utilizando el lenguaje de programación Python.",
+    description: "Programacion del microprocesador",
+    longDescription: "Sumérgete en el lenguaje ensamblador y resuelve ejercicios prácticos.",
     image: "https://via.placeholder.com/600x300/dbeafe/60a5fa?text=Data+Science+Python",
   },
   {
     id: "activity-5",
-    name: "Gestión de Bases de Datos",
+    name: "Ensamblador",
     icon: <FaDatabase />,
     color: "bg-[#DDF6D2]",
     description: "Comprende los principios de las bases de datos relacionales y no relacionales.",

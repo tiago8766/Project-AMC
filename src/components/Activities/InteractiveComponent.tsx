@@ -10,6 +10,10 @@ import {
   ProcessorTimelineProps,
   FlashcardExplorerProps,
   ActivityDetailSection,
+  InfografiaViewerData,
+  AssemblyCodeViewerData,
+  InteractiveComponentDataType,
+  AssemblyConceptsViewerData,
 } from '../../interfaces/Actividades';
 
 
@@ -27,7 +31,12 @@ import BlockDiagramQuiz from './Actividad 2/BlockDiagramQuiz';
 import ProcessorTimeline from './Actividad 3/ProcessorTimeline';
 import FlashcardExplorer from './Actividad 3/FlashcardExplorer';
 import EvaluationAct3 from './Actividad 3/EvaluationAct3';
+import InfografiaViewer from './Actividad 4/InfografiaViewer';
+import AssemblyCodeViewer from './Actividad 4/AssemblyCodeViewer';
+import EvaluationAct4 from './Actividad 4/Evaluation4';
 
+import AssemblyConceptsViewer from './Actividad 5/AssemblyConceptsViewer';
+import EvaluationAct5 from './Actividad 5/Evaluation5';
 
 interface InteractiveComponentRendererProps {
   section: ActivityDetailSection;
@@ -40,7 +49,7 @@ const InteractiveComponentRenderer: React.FC<InteractiveComponentRendererProps> 
     return null;
 
   }
-
+  const componentData = section.data as InteractiveComponentDataType;
 
   switch (section.interactiveComponent) {
     case 'flowDiagram':
@@ -83,6 +92,23 @@ const InteractiveComponentRenderer: React.FC<InteractiveComponentRendererProps> 
     case 'evaluationAct3':
 
       return <EvaluationAct3 />;
+
+    case 'infografiaViewer':
+
+      return <InfografiaViewer data={componentData as InfografiaViewerData} />;
+
+    case 'assemblyCodeViewer':
+
+      return <AssemblyCodeViewer data={componentData as AssemblyCodeViewerData} />;
+
+    case 'evaluationAct4':
+      return <EvaluationAct4 />;
+
+    case 'assemblyConceptsViewer':
+      return <AssemblyConceptsViewer {...(componentData as AssemblyConceptsViewerData)} />;
+
+    case 'evaluationAct5':
+      return <EvaluationAct5/>
 
     default:
 
