@@ -14,6 +14,8 @@ import {
   AssemblyCodeViewerData,
   InteractiveComponentDataType,
   AssemblyConceptsViewerData,
+  MicrocontrollerConceptsViewerData,
+  ArduinoProjectViewerData
 } from '../../interfaces/Actividades';
 
 
@@ -37,6 +39,10 @@ import EvaluationAct4 from './Actividad 4/Evaluation4';
 
 import AssemblyConceptsViewer from './Actividad 5/AssemblyConceptsViewer';
 import EvaluationAct5 from './Actividad 5/Evaluation5';
+import ArduinoProjectViewer from './Actividad 6/ArduinoProjectViewer';
+import MicrocontrollerConceptsViewer from './Actividad 6/MicrocontrollerConceptsViewer';
+import EvaluationAct6 from './Actividad 6/Evaluation6';
+
 
 interface InteractiveComponentRendererProps {
   section: ActivityDetailSection;
@@ -108,7 +114,15 @@ const InteractiveComponentRenderer: React.FC<InteractiveComponentRendererProps> 
       return <AssemblyConceptsViewer {...(componentData as AssemblyConceptsViewerData)} />;
 
     case 'evaluationAct5':
-      return <EvaluationAct5/>
+      return <EvaluationAct5 />
+
+    case 'microcontrollerConceptsViewer':
+      return <MicrocontrollerConceptsViewer {...(componentData as MicrocontrollerConceptsViewerData)} />;
+    case 'arduinoProjectViewer':
+      return <ArduinoProjectViewer {...(componentData as ArduinoProjectViewerData)} />;
+     case 'evaluationAct6':
+      return <EvaluationAct6 />
+
 
     default:
 

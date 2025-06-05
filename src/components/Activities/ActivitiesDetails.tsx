@@ -59,6 +59,11 @@ const ActivityDetail: React.FC = () => {
             loadedSections = EnsambladorIx86;
             break;
           }
+          case 'activity-6': {
+            const {  Microcontroladores} = await import('../Activities/Actividad 6/Microcontroladores');
+            loadedSections = Microcontroladores;
+            break;
+          }
         
   
           default:

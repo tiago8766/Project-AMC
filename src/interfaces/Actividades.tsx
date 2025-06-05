@@ -152,7 +152,27 @@ export interface AssemblyConceptsViewerData {
     }[];
   }[];
 }
-
+export interface MicrocontrollerConceptsViewerData {
+  type: 'microcontrollerConceptsViewer';
+  concepts: {
+    term: string;
+    definition: string;
+    examples?: {
+      type: string;
+      description: string;
+    }[];
+  }[];
+}
+export interface ArduinoProjectViewerData {
+  type: 'arduinoProjectViewer';
+  projects: {
+    id: string;
+    title: string;
+    description: string;
+    code: string;
+    circuitImage?: string; 
+  }[];
+}
 export type InteractiveComponentDataType =
   | FlowDiagramData
   | MemoryPyramidData
@@ -165,13 +185,15 @@ export type InteractiveComponentDataType =
   | FlashcardExplorerProps
   | InfografiaViewerData
   | AssemblyCodeViewerData
-  | AssemblyConceptsViewerData;
+  | AssemblyConceptsViewerData
+  | MicrocontrollerConceptsViewerData
+  | ArduinoProjectViewerData;
 export interface ActivityDetailSection {
   id: string;
   title: string;
   content: string;
   image?: string;
-  interactiveComponent?: 'flowDiagram' | 'memoryPyramid' | 'ioClassifier' | 'evaluation' | 'architectureViewer' | 'terminalsViewer' | 'blockDiagramBuilder' | 'blockDiagramQuiz' | 'processorTimeline' | 'flashcardExplorer' | 'evaluationAct3'| 'infografiaViewer' | 'assemblyCodeViewer'| 'evaluationAct4' |'assemblyConceptsViewer' | 'evaluationAct5';
+  interactiveComponent?: 'flowDiagram' | 'memoryPyramid' | 'ioClassifier' | 'evaluation' | 'architectureViewer' | 'terminalsViewer' | 'blockDiagramBuilder' | 'blockDiagramQuiz' | 'processorTimeline' | 'flashcardExplorer' | 'evaluationAct3'| 'infografiaViewer' | 'assemblyCodeViewer'| 'evaluationAct4' |'assemblyConceptsViewer' | 'evaluationAct5' | 'microcontrollerConceptsViewer' | 'arduinoProjectViewer' |  'evaluationAct6';
   data?: InteractiveComponentDataType; 
 }
 
@@ -239,6 +261,7 @@ export const Actividades: Activity[] = [
     description: "Explora los sistemas operativos y la línea de comandos para gestionar el sistema.",
     longDescription: "Aprende sobre la estructura y funciones de los sistemas operativos, y domina el uso de la interfaz de línea de comandos (shell).",
     image: "https://via.placeholder.com/600x300/ffedd5/f97316?text=OS+Shell",
+    
   },
   {
     id: "activity-7",
