@@ -1,23 +1,7 @@
 import { ActivityDetailSection, EvaluationData } from '../../../interfaces/Actividades';
 
 export const ProgramacionMicroprocesador: ActivityDetailSection[] = [
-  {
-    id: 'infografia-conceptos',
-    title: 'Infografía: Conceptos de Ensamblador',
-    content: 'Explora los conceptos clave del lenguaje ensamblador para la familia ix86.',
-    interactiveComponent: 'infografiaViewer',
-    data: {
-      type: 'infografiaViewer',
-      sections: [
-        { title: 'Ensamblador de la familia ix86', description: 'Lenguaje de bajo nivel para programar directamente la CPU.', image: '/assets/images/ensamblador-ix86.png' },
-        { title: 'Declaración de Segmentos', description: 'Define áreas de memoria para código, datos y pila.', image: '/assets/images/declaracion-segmentos.png' },
-        { title: 'Modos de Direccionamiento', description: 'Métodos para especificar la ubicación de los operandos.', image: '/assets/images/modos-direccionamiento.png' },
-        { title: 'Estructuras de Control de Flujo', description: 'Condicionales y bucles con instrucciones de salto.', image: '/assets/images/control-flujo.png' },
-        { title: 'Formato de una Sentencia', description: 'Formato típico: [etiqueta:] [instrucción] [operandos] [;comentario].', image: '/assets/images/formato-sentencia.png' },
-        { title: 'Palabras Reservadas', description: 'Palabras con significado especial como MOV, ADD, JMP.', image: '/assets/images/palabras-reservadas.png' },
-      ]
-    }
-  },
+  
   {
     id: 'ejercicios-basicos',
     title: 'Ejercicios de Ensamblador',

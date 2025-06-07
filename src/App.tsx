@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importa estos componentes
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from "./components/Navbar/Navbar";
 import Banner from './components/Navbar/Banner';
@@ -7,13 +7,18 @@ import Hero from './components/Hero/Hero';
 import Info from './components/Info/info';
 import Programs from './components/Programs/Programs';
 import { programsDataList } from './interfaces/ProgramsData';
-import OurActivities from './components/Activities/Activities'; // Asegúrate que la ruta sea correcta si cambiaste 'Activities'
+import OurActivities from './components/Activities/Activities';
 import CardSection from './components/Card/CardSection';
 import ActivityDetail from './components/Activities/ActivitiesDetails';
+import TodasLasActividadesPage from './components/Activities/Todas Actividades/TodasLasActividadesPage';
+import DetalleActividadPage from './components/Activities/Todas Actividades/DetalleActividadPage';
+import ResourcesPage from './components/Resources/ResourcesPage';
+import MaintenanceDetailPage from './components/Resources/MaintenanceDetailPage';
+
 
 const App: React.FC = () => {
   return (
-    <Router> {/* Envuelve toda tu aplicación en <Router> */}
+    <Router> 
       <main className='overflow-x-hidden'>
         <Navbar />
         <Banner />
@@ -31,10 +36,21 @@ const App: React.FC = () => {
               </>
             }
           />
+          <Route
+            path="/recursos"
+            element={<ResourcesPage />}
+          />
 
-
+          <Route path="/todas-las-actividades" element={<TodasLasActividadesPage />} />
           <Route path="/actividades/:id" element={<ActivityDetail />} />
-
+          <Route
+            path="/actividades/detalles/:id"
+            element={<DetalleActividadPage />}
+          />
+          <Route
+          path="/recursos/:id"
+          element={<MaintenanceDetailPage />}
+        />
 
           {/* <Route path="/todas-las-actividades" element={<div>Página de todas las actividades aquí</div>} /> */}
 

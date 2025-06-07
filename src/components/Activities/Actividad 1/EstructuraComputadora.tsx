@@ -6,13 +6,13 @@ export const estructuraComputadoraSections: ActivityDetailSection[] = [
     id: "definicion",
     title: "01. Definición",
     content: "El modo en que los componentes tanto de hardware (CPU, RAM, Placa Base, etc.) como de software (Sistema Operativo, programas, etc.) están interrelacionados entre sí, definiendo la forma en que la computadora procesa, almacena y transmite la información para ejecutar tareas de manera eficiente.",
-    image: "https://via.placeholder.com/600x300/a7f3d0/10b981?text=Definicion+Computadora",
+   
   },
   {
     id: "procesamiento",
     title: "02. Procesamiento",
     content: "Un dispositivo de procesamiento es un elemento esencial de un computador, este es el encargado de llevar a cabo operaciones aritméticas, lógicas y de control sobre los datos. Su función es clave para el manejo de la información y la ejecución de tareas dentro del sistema. Tiene por nombre Unidad Central de Procesamiento (CPU, Central Processing Unit), aunque frecuentemente se le llama procesador. Como definición breve tenemos que la CPU es el cerebro del ordenador, donde se coordinan y ejecutan las operaciones necesarias para el funcionamiento del sistema.",
-    image: "https://via.placeholder.com/600x300/bfdbfe/3b82f6?text=Procesamiento",
+    
     interactiveComponent: 'flowDiagram',
     data: {
       flowSteps: [
@@ -33,7 +33,7 @@ export const estructuraComputadoraSections: ActivityDetailSection[] = [
     id: "memoria",
     title: "03. Sistema de Memoria",
     content: "Todo computador necesita un sistema de memoria para almacenar los programas que se ejecutan y los datos necesarios para ejecutar estos programas. Los programas que ejecuta el procesador central están almacenados en memoria. La memoria es una secuencia de celdas de almacenamiento que pueden ser direccionadas en forma individual o en bloque.",
-    image: "https://via.placeholder.com/600x300/d1fae5/059669?text=Sistema+Memoria",
+   
     interactiveComponent: 'memoryPyramid',
     data: {
       hierarchy: [
@@ -59,7 +59,7 @@ export const estructuraComputadoraSections: ActivityDetailSection[] = [
     id: "entrada-salida",
     title: "04. Sistema de Entrada-Salida",
     content: "Los sistemas de entradas y salidas son componentes que permiten que la computadora reciba información (entrada) y envíe información (salida) para interactuar con los usuarios o con otros sistemas. Los dispositivos de entrada introducen datos a la computadora y los de salida muestran o transmiten datos desde la computadora al exterior.",
-    image: "https://via.placeholder.com/600x300/c7d2fe/6366f1?text=Input+Output",
+ 
     interactiveComponent: 'ioClassifier',
     data: {
       devices: [

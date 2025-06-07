@@ -9,6 +9,7 @@ export interface ProgramsDataItem {
   title: string;
   description: string;
   buttonText: string;
+  buttonLink: string;
 }
 
 const INFO = "El Emu8086 es un programa emulador que permite simular el funcionamiento del microprocesador Intel 8086 en una computadora moderna. Está diseñado principalmente para el aprendizaje de lenguaje ensamblador";
@@ -22,6 +23,7 @@ export const programsDataList: ProgramsDataItem[] = [
     title: "LENGUAJE ENSAMBLADOR",
     description: INFO,
     buttonText: "VER",
+    buttonLink: "https://emu8086-microprocessor-emulator.es.download.it/"
   },
   {
     id: "program-2",
@@ -31,5 +33,6 @@ export const programsDataList: ProgramsDataItem[] = [
     title: "MPLAB",
     description: INFO2,
     buttonText: "VER",
+    buttonLink: "https://www.microchip.com/en-us/tools-resources/develop/mplab-xpress"
   },
 ];

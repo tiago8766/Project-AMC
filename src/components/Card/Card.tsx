@@ -26,7 +26,6 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 const Card: React.FC<CardProps> = ({
   name,
   title,
-  imageSrc,
   comment,
   rating,
 }) => {
@@ -39,11 +38,7 @@ const Card: React.FC<CardProps> = ({
       cursor-pointer
     ">
       <div className="flex items-center mb-4">
-        <img
-          src={imageSrc}
-          alt={name}
-          className="w-16 h-16 rounded-full object-cover mr-4"
-        />
+       
         <div>
           <h3 className="font-semibold text-lg text-gray-800">{name}</h3>
           <p className="text-gray-600 text-sm">{title}</p>

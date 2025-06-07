@@ -15,7 +15,22 @@ import {
   InteractiveComponentDataType,
   AssemblyConceptsViewerData,
   MicrocontrollerConceptsViewerData,
-  ArduinoProjectViewerData
+  ArduinoProjectViewerData,
+  ConceptosMemoriaViewerData,
+  AccesoMemoriaExplorerData,
+  CodeSnippetsReviewerData,
+  PicConceptsViewerData,
+  PicHardwareExplorerData,
+  PicRegistersAndAddressingData,
+  MemoryMapBuilderData,
+  AdvancedInstructionsViewerData,
+  PicPeripheralCodeViewerData,
+  AssemblyFundamentalsViewerData,
+  MplabSimulationViewerData,
+  ParallelPortsViewerData,
+  ArduinoTimersAndIOViewerData,
+  CcpCodeExamplesViewerData,
+  CcpConceptsViewerData
 } from '../../interfaces/Actividades';
 
 
@@ -42,8 +57,21 @@ import EvaluationAct5 from './Actividad 5/Evaluation5';
 import ArduinoProjectViewer from './Actividad 6/ArduinoProjectViewer';
 import MicrocontrollerConceptsViewer from './Actividad 6/MicrocontrollerConceptsViewer';
 import EvaluationAct6 from './Actividad 6/Evaluation6';
-
-
+import ConceptosMemoriaViewer from './Actividad 7/ConceptosMemoriaViewer';
+import AccesoMemoriaExplorer from './Actividad 7/AccesoMemoriaExplorer';
+import CodeSnippetsReviewer from './Actividad 7/CodeSnippetsReviewer';
+import PicConceptsViewer from './Actividad 8/PicConceptsViewer';
+import PicHardwareExplorer from './Actividad 8/PicHardwareExplorer';
+import PicRegistersAndAddressing from './Actividad 8/PicRegistersAndAddressing';
+import MemoryMapBuilder from './Actividad 8/MemoryMapBuilder';
+import AdvancedInstructionsViewer from './Actividad 9/AdvancedInstructionsViewer';
+import PicPeripheralCodeViewer from './Actividad 9/PicPeripheralCodeViewer';
+import AssemblyFundamentalsViewer from './Actividad 10/AssemblyFundamentalsViewer';
+import MplabSimulationViewer from './Actividad 10/MplabSimulationViewer';
+import ParallelPortsViewer from './Actividad 11/ParallelPortsViewer';
+import ArduinoTimersAndIOViewer from './Actividad 11/ArduinoTimersAndIOViewer';
+import CcpConceptsViewer from './Actividad 12/CcpConceptsViewer';
+import CcpCodeExamplesViewer from './Actividad 12/CcpCodeExamplesViewer';
 interface InteractiveComponentRendererProps {
   section: ActivityDetailSection;
 }
@@ -120,8 +148,43 @@ const InteractiveComponentRenderer: React.FC<InteractiveComponentRendererProps> 
       return <MicrocontrollerConceptsViewer {...(componentData as MicrocontrollerConceptsViewerData)} />;
     case 'arduinoProjectViewer':
       return <ArduinoProjectViewer {...(componentData as ArduinoProjectViewerData)} />;
-     case 'evaluationAct6':
+    case 'evaluationAct6':
       return <EvaluationAct6 />
+
+    case 'conceptosMemoriaViewer':
+      return <ConceptosMemoriaViewer {...(componentData as ConceptosMemoriaViewerData)} />;
+    case 'accesoMemoriaExplorer':
+      return <AccesoMemoriaExplorer {...(componentData as AccesoMemoriaExplorerData)} />;
+    case 'codeSnippetsReviewer':
+      return <CodeSnippetsReviewer {...(componentData as CodeSnippetsReviewerData)} />;
+
+    case 'picConceptsViewer':
+      return <PicConceptsViewer {...(componentData as PicConceptsViewerData)} />;
+    case 'picHardwareExplorer':
+      return <PicHardwareExplorer {...(componentData as PicHardwareExplorerData)} />;
+    case 'picRegistersAndAddressing':
+      return <PicRegistersAndAddressing {...(componentData as PicRegistersAndAddressingData)} />;
+    case 'memoryMapBuilder':
+      return <MemoryMapBuilder {...(componentData as MemoryMapBuilderData)} />;
+    case 'advancedInstructionsViewer':
+      return <AdvancedInstructionsViewer {...(componentData as AdvancedInstructionsViewerData)} />;
+    case 'picPeripheralCodeViewer':
+      return <PicPeripheralCodeViewer {...(componentData as PicPeripheralCodeViewerData)} />;
+
+    case 'assemblyFundamentalsViewer':
+      return <AssemblyFundamentalsViewer {...(componentData as AssemblyFundamentalsViewerData)} />;
+    case 'mplabSimulationViewer':
+      return <MplabSimulationViewer {...(componentData as MplabSimulationViewerData)} />;
+    case 'parallelPortsViewer':
+      return <ParallelPortsViewer {...(componentData as ParallelPortsViewerData)} />;
+    case 'arduinoTimersAndIOViewer':
+      return <ArduinoTimersAndIOViewer {...(componentData as ArduinoTimersAndIOViewerData)} />;
+      case 'ccpConceptsViewer':
+      return <CcpConceptsViewer {...(componentData as CcpConceptsViewerData)} />;
+    case 'ccpCodeExamplesViewer':
+      return <CcpCodeExamplesViewer {...(componentData as CcpCodeExamplesViewerData)} />;
+
+
 
 
     default:

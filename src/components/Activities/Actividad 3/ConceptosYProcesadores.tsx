@@ -6,7 +6,6 @@ export const ConceptosYProcesadores: ActivityDetailSection[] = [
     id: 'conceptos',
     title: 'Conceptos Clave',
     content: `Esta sección cubre los fundamentos esenciales de la arquitectura de computadoras, incluyendo interfaces programables, interrupciones, comunicación serial, y los modelos de memoria Von Neumann y Harvard.`,
-    image: '/assets/images/conceptos.png',
     interactiveComponent: 'flashcardExplorer',
     data: {
       type: 'flashcardExplorer',
@@ -29,7 +28,7 @@ export const ConceptosYProcesadores: ActivityDetailSection[] = [
     id: 'tipos-procesadores',
     title: 'Tipos de Procesadores',
     content: `Explora la fascinante evolución de los microprocesadores, desde sus humildes comienzos en los años 70 hasta los potentes chips multinúcleo de la actualidad.`,
-    image: '/assets/images/procesadores.png',
+
     interactiveComponent: 'processorTimeline',
     data: {
       type: 'processorTimeline',

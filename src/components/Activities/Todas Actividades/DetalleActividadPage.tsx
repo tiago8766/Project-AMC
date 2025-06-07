@@ -2,12 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-import { Actividades, Activity, ActivityDetailSection } from '../../interfaces/Actividades';
-import InteractiveComponentRenderer from './InteractiveComponent';
+import { Actividades, Activity, ActivityDetailSection } from '../../../interfaces/Actividades';
+import InteractiveComponentRenderer from '../InteractiveComponent';
 
 
-
-const ActivityDetail: React.FC = () => {
+const DetalleActividadPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [activity, setActivity] = useState<Activity | null>(null);
   const [sections, setSections] = useState<ActivityDetailSection[] | null>(null);
@@ -35,62 +34,62 @@ const ActivityDetail: React.FC = () => {
 
         switch (id) {
           case 'activity-1': {
-            const { estructuraComputadoraSections } = await import('../Activities/Actividad 1/EstructuraComputadora');
+            const { estructuraComputadoraSections } = await import('../../Activities/Actividad 1/EstructuraComputadora');
             loadedSections = estructuraComputadoraSections;
             break;
           }
           case 'activity-2': {
-            const { arquitecturaMicroprocesadorSections } = await import('../Activities/Actividad 2/Microprocesador');
+            const { arquitecturaMicroprocesadorSections } = await import('../../Activities/Actividad 2/Microprocesador');
             loadedSections = arquitecturaMicroprocesadorSections;
             break;
           }
           case 'activity-3': {
-            const { ConceptosYProcesadores } = await import('../Activities/Actividad 3/ConceptosYProcesadores');
+            const { ConceptosYProcesadores } = await import('../../Activities/Actividad 3/ConceptosYProcesadores');
             loadedSections = ConceptosYProcesadores;
             break;
           }
           case 'activity-4': {
-            const { ProgramacionMicroprocesador } = await import('../Activities/Actividad 4/ProgramacionMicro');
+            const { ProgramacionMicroprocesador } = await import('../../Activities/Actividad 4/ProgramacionMicro');
             loadedSections = ProgramacionMicroprocesador;
             break;
           }
           case 'activity-5': {
-            const { EnsambladorIx86 } = await import('../Activities/Actividad 5/Ensamblador');
+            const { EnsambladorIx86 } = await import('../../Activities/Actividad 5/Ensamblador');
             loadedSections = EnsambladorIx86;
             break;
           }
           case 'activity-6': {
-            const { Microcontroladores } = await import('../Activities/Actividad 6/Microcontroladores');
+            const { Microcontroladores } = await import('../../Activities/Actividad 6/Microcontroladores');
             loadedSections = Microcontroladores;
             break;
           }
           case 'activity-7': {
-            const { MemoriaExterna } = await import('../Activities/Actividad 7/MemoriaExterna');
+            const { MemoriaExterna } = await import('../../Activities/Actividad 7/MemoriaExterna');
             loadedSections = MemoriaExterna;
             break;
           }
           case 'activity-8': {
-            const { ArquitecturaPic } = await import('../Activities/Actividad 8/arquitecturaPicSections');
+            const { ArquitecturaPic } = await import('../../Activities/Actividad 8/arquitecturaPicSections');
             loadedSections = ArquitecturaPic;
             break;
           }
            case 'activity-9': {
-            const { ProgramacionAvanzadaPic } = await import('../Activities/Actividad 9/programacionAvanzadaPicSections');
+            const { ProgramacionAvanzadaPic } = await import('../../Activities/Actividad 9/programacionAvanzadaPicSections');
             loadedSections = ProgramacionAvanzadaPic;
             break;
           }
             case 'activity-10': {
-            const { FundamentosEnsambladorInterrupciones } = await import('../Activities/Actividad 10/fundamentosEnsamblador');
+            const { FundamentosEnsambladorInterrupciones } = await import('../../Activities/Actividad 10/fundamentosEnsamblador');
             loadedSections = FundamentosEnsambladorInterrupciones;
             break;
           }
            case 'activity-11': {
-            const { PuertosParalelosTimers } = await import('../Activities/Actividad 11/puertosParalelos');
+            const { PuertosParalelosTimers } = await import('../../Activities/Actividad 11/puertosParalelos');
             loadedSections = PuertosParalelosTimers;
             break;
           }
            case 'activity-12': {
-            const { ModulosCcp } = await import('../Activities/Actividad 12/modulosCcpSections');
+            const { ModulosCcp } = await import('../../Activities/Actividad 12/modulosCcpSections');
             loadedSections = ModulosCcp;
             break;
           }
@@ -207,4 +206,4 @@ const ActivityDetail: React.FC = () => {
   );
 };
 
-export default ActivityDetail;
+export default DetalleActividadPage;

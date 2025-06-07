@@ -19,11 +19,7 @@ const MicroprocessorTerminals: React.FC<MicroprocessorTerminalsProps> = ({ data 
 
       <div className="image-area relative mb-6">
        
-        <img
-          src={data.mainImage}
-          alt="Microprocesador con terminales"
-          className="w-full max-h-80 object-contain rounded-md border border-gray-200"
-        />
+      
        
       </div>
 

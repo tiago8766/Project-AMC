@@ -33,13 +33,7 @@ const ArchitectureViewer: React.FC<ArchitectureViewerProps> = ({ data }) => {
       {selectedArchitecture ? (
         <div className="selected-architecture-detail p-5 border border-indigo-200 rounded-lg bg-indigo-50">
           <h5 className="text-2xl font-bold text-indigo-800 mb-3">{selectedArchitecture.name}</h5>
-          {selectedArchitecture.image && (
-            <img
-              src={selectedArchitecture.image}
-              alt={`${selectedArchitecture.name} Diagram`}
-              className="w-full max-h-64 object-contain mb-4 rounded-md border border-gray-200"
-            />
-          )}
+         
           <div className="components-list grid grid-cols-1 md:grid-cols-2 gap-4">
             {selectedArchitecture.components.map(comp => (
               <div key={comp.id} className="p-3 bg-white rounded-md shadow-sm border border-gray-100">

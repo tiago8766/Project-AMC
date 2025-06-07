@@ -15,6 +15,12 @@ const Hero: React.FC = () => {
       }
     }
   };
+    const videoUrl = "https://www.youtube.com/watch?v=atIbZdCPgMo"; 
+
+  const handlePlayVideo = () => {
+    window.open(videoUrl, "_blank"); 
+   
+  }
 
   return (
     <div
@@ -58,7 +64,8 @@ const Hero: React.FC = () => {
             initial="hidden"
             animate="visible"
             className="flex items-center gap-2 bg-gray-200 text-gray-800 px-6 py-3 rounded-full shadow-md hover:bg-gray-300 transition-colors"
-            onClick={() => console.log("Botón Play clickeado")}
+            onClick={handlePlayVideo}
+            
           >
             <FaPlay className="text-lg" /> 
              Video

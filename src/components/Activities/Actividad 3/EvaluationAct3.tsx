@@ -1,5 +1,5 @@
 import React from "react";
-import DnDComponentImage from "../../DnDComponents/DnDComponentImage";
+
 import DnDComponentText from "../../DnDComponents/DnDComponentText";
 
 const EvaluationAct3: React.FC = () => {
